@@ -52,6 +52,10 @@ class Pages extends PDFObject
                 $kids  = $this->get('Kids')->getContent();
                 $pages = array();
 
+				if ( !is_array($kids) ) {
+					return [];
+				}
+				
                 foreach ($kids as $kid) {
 
                     if ($kid instanceof Pages) {
